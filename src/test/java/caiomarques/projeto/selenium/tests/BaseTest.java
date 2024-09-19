@@ -1,23 +1,28 @@
 package caiomarques.projeto.selenium.tests;
 
-import caiomarques.projeto.selenium.pages.BasePage;
-import caiomarques.projeto.selenium.pages.RegisterPage;
-import caiomarques.projeto.selenium.pages.LoginPage;
+import caiomarques.projeto.selenium.Core.BasePage;
+import caiomarques.projeto.selenium.PageObjects.RegisterPage;
+import caiomarques.projeto.selenium.PageObjects.HomePage;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
+import org.openqa.selenium.chrome.ChromeDriver;
 
 class BaseTest {
 	protected BasePage basePage;
-	protected LoginPage loginPage;
+	protected HomePage homePage;
 	protected RegisterPage registerPage;
 	protected final String URL = "https://advantageonlineshopping.com/#/";
 
 	@BeforeEach
 	void setUp() throws Exception {
-		this.loginPage = new LoginPage();
+		System.setProperty("webdriver.chrome.driver", "drivers/chromedriver.exe");
+		driver = new ChromeDriver();
+		driver.manage().window().maximize();
+
+		this.homePage = new HomePage();
 		this.registerPage = new RegisterPage();
 
-		basePage.visit(this.URL);
+		homePage.visit(this.URL);
 	}
 
 	@AfterEach

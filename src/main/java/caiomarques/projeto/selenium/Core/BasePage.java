@@ -1,4 +1,4 @@
-package caiomarques.projeto.selenium.pages;
+package caiomarques.projeto.selenium.Core;
 
 import java.time.Duration;
 
@@ -6,7 +6,6 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
@@ -17,12 +16,6 @@ public class BasePage {
 	private Actions action;
 	private WebDriverWait wait;
 	private Select select;
-
-	public BasePage() {
-		System.setProperty("webdriver.chrome.driver", "drivers/chromedriver.exe");
-		driver = new ChromeDriver();
-		driver.manage().window().maximize();
-	}
 
 	public void visit(String url) {
 		this.driver.get(url);

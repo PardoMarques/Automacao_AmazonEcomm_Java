@@ -1,26 +1,9 @@
 package caiomarques.projeto.selenium.tests;
 
-import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import caiomarques.projeto.selenium.pages.RegisterPage;
-
 class RegisterTest extends BaseTest {
-	private RegisterPage registerPage;
-	private final String URL = "https://advantageonlineshopping.com/#/";
-
-	@BeforeEach
-	void setUp() throws Exception {
-		this.registerPage = new RegisterPage();
-		this.registerPage.visit(this.URL);
-	}
-
-	@AfterEach
-	void tearDown() throws Exception {
-		this.registerPage.quitWebDriver();
-	}
 
 	@Test
 	void test() {

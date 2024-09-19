@@ -1,5 +1,6 @@
-package caiomarques.projeto.selenium.pages;
+package caiomarques.projeto.selenium.PageObjects;
 
+import caiomarques.projeto.selenium.Core.BasePage;
 import org.openqa.selenium.By;
 
 public class RegisterPage extends BasePage {
