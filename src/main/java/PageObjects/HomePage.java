@@ -2,8 +2,13 @@ package PageObjects;
 
 import Core.BasePage;
 import Utilidades.Constants;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+
+import java.util.List;
+
+import static org.junit.Assert.assertEquals;
 
 public class HomePage extends BasePage {
 
@@ -13,8 +18,11 @@ public class HomePage extends BasePage {
 
 	@FindBy(css = "#nav-search-submit-button")
 	private WebElement iconSearch;
-    
-    //Metodos
+
+	@FindBy(css = "[class='left-pane-results-container']")
+	private WebElement boxSugestions;
+
+	//Metodos
 	    public void visitarPagina() {
 	        getDriver().get(Constants.HOME_PAGE_URL);
 	    }
@@ -24,7 +32,7 @@ public class HomePage extends BasePage {
 		}
 
 	    public void preencherCampoDePesquisa(String textoProduto) {
-			iconSearch.clear();
+			iconSearch.click();
 			iconSearch.sendKeys(textoProduto);
 	    }
 
@@ -32,5 +40,17 @@ public class HomePage extends BasePage {
 			preencherCampoDePesquisa(textoProduto);
 			clicarNoIconeDePesquisa();
 	    }
+
+		public void validarSugestoesDePesquisa(String textoProduto) {
+			// Localizar todas as divs que contêm as sugestões
+			List<WebElement> suggestions = boxSugestions.findElements(By.cssSelector("[class='s-suggestion s-suggestion-ellipsis-direction']"));
+
+			for (WebElement suggestion : suggestions) {
+				String suggestionText = getText(suggestion);
+				assertEquals(suggestionText, textoProduto);
+			}
+		}
+
+
 		
 }

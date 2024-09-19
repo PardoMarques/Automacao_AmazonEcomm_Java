@@ -13,7 +13,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.util.concurrent.TimeUnit;
 
-public abstract class BasePage {
+public class BasePage {
 
 		private WebDriver driver;
 
@@ -25,10 +25,10 @@ public abstract class BasePage {
 			wait = new WebDriverWait(driver, Duration.ofSeconds(Constants.WEBDRIVER_TIMEOUT));
 			this.driver = driver;
 		}
-		
+
 		protected WebDriver getDriver() {
-			return DriverFactory.getDriver();
-		}
+		return DriverFactory.getDriver();
+	}
 
 		protected void populateTextField(WebElement element , String data) {
 			if ( data != null) {
@@ -52,6 +52,15 @@ public abstract class BasePage {
 		protected String getText(WebElement element) {
 			waitForClickable(element);
 			return element.getText();
+		}
+
+
+		public String getCurrentUrl() {
+			return driver.getCurrentUrl();
+		}
+
+		public String getTitle() {
+			return driver.getTitle();
 		}
 		
 		protected void click(WebElement element) {

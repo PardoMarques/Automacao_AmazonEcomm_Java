@@ -8,10 +8,10 @@ Funcionalidade: Página Inicial (Home)
 
 	Cenário: Carregamento rápido da página inicial
 		Dado que acesso a página inicial da Amazon
-		#Então deve aparecer no titulo a mensagem "EXEMPLO"
-		#E deve constar na atual url o valor "abc"
+		Então deve aparecer no titulo a mensagem "Amazon.com.br | Tudo pra você, de A a Z."
+		E deve constar na atual url o valor "https://www.amazon.com.br/"
 
 	Cenário: Exibir sugestões de pesquisa ao digitar na barra de pesquisa
 		Dado que acesso a página inicial da Amazon
-		#Quando escrevo no campo de pesquisa o trecho "controle"
-		#Então deve aparecer outras sugestões sobre o trecho "controle"
+		Quando escrevo no campo de pesquisa o trecho "controle"
+		Então deve aparecer dez sugestões sobre o trecho "controle"
