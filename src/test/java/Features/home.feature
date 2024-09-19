@@ -7,7 +7,7 @@ Funcionalidade: Página Inicial (Home)
 	Para que eu possa iniciar a navegação de forma eficiente e sem problemas
 
 	Cenário: Carregamento rápido da página inicial
-		Dado que acesso a página inicial da Amazon
+		Dado que acesso a página inicial da Amazon em menos de três segundos
 		Então deve aparecer no titulo a mensagem "Amazon.com.br | Tudo pra você, de A a Z."
 		E deve constar na atual url o valor "https://www.amazon.com.br/"
 

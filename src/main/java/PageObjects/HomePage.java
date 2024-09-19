@@ -9,6 +9,7 @@ import org.openqa.selenium.support.FindBy;
 import java.util.List;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
 public class HomePage extends BasePage {
 
@@ -26,6 +27,17 @@ public class HomePage extends BasePage {
 	    public void visitarPagina() {
 	        getDriver().get(Constants.HOME_PAGE_URL);
 	    }
+
+		public void validarVisitaComTempoDeCarregamento(){
+			boolean resultado;
+			long tempoLargada = System.currentTimeMillis();
+			getDriver().get(Constants.HOME_PAGE_URL);
+			long tempoChegada = System.currentTimeMillis();
+			long diferencaDeTempo = tempoChegada - tempoLargada;
+
+            resultado = diferencaDeTempo < 3000;
+			assertTrue(resultado);
+		}
 
 		public void clicarNoIconeDePesquisa(){
 			click(inputSearch);
@@ -50,7 +62,4 @@ public class HomePage extends BasePage {
 				assertEquals(suggestionText, textoProduto);
 			}
 		}
-
-
-		
 }

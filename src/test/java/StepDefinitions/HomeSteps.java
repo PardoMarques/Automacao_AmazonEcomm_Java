@@ -18,6 +18,11 @@ public class HomeSteps {
 		homePage.visitarPagina();
 	}
 
+	@Dado("que acesso a página inicial da Amazon em menos de três segundos")
+	public void que_acesso_a_página_inicial_da_amazon_em_menos_de_três_segundos() {
+		homePage.validarVisitaComTempoDeCarregamento();
+	}
+
 	@Quando("escrevo no campo de pesquisa o trecho {string}")
 	public void escrevo_no_campo_de_pesquisa_o_trecho(String textoProduto) {
 		homePage.preencherCampoDePesquisa(textoProduto);
