@@ -1,7 +1,7 @@
-package caiomarques.projeto.selenium.StepDefinitions;
+package StepDefinitions;
 
 import Core.DriverFactory;
-import io.cucumber.core.api.Scenario;
+import io.cucumber.java.Scenario;
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
 

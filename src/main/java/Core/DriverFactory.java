@@ -1,4 +1,4 @@
-package caiomarques.projeto.selenium.Core;
+package Core;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -9,7 +9,7 @@ public class DriverFactory {
 
 	public static WebDriver getDriver() {
 		if (driver == null) {
-			System.setProperty("webdriver.chrome.driver", "c:\\webdrivers\\chromedriver.exe");
+			System.setProperty("webdriver.chrome.driver", "drivers/chromedriver.exe");
 			ChromeOptions chromeOptions = new ChromeOptions(); 
 			//chromeOptions.addArguments("--headless"); 
 			driver = new ChromeDriver(chromeOptions); 

@@ -1,4 +1,4 @@
-package caiomarques.projeto.selenium.Core;
+package Core;
 
 import java.time.Duration;
 

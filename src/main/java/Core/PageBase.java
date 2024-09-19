@@ -1,5 +1,5 @@
-package caiomarques.projeto.selenium.Core;
-import caiomarques.projeto.selenium.Utilidades.Constants;
+package Core;
+import Utilidades.Constants;
 
 import java.time.Duration;
 import org.openqa.selenium.Alert;
