@@ -1,11 +1,11 @@
 package PageObjects;
 
-import Core.PageBase;
+import Core.BasePage;
 import Utilidades.Constants;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-public class HomePage extends PageBase{
+public class HomePage extends BasePage {
 
 	// Mapeamento
 	@FindBy(css = "#twotabsearchtextbox")
