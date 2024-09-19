@@ -2,12 +2,8 @@
 @all_home
 Funcionalidade: Home
 
-	Como: um visitante
-   	Quero: Percorrer os fluxos da página inicial
-   	Para: Validar os caminhos possíveis
-
    	Contexto: Acessando com um usuário Default a página do Valorant
-   	Dado um usuario simples acessar a página Home
+   	Dado um usuário acessar a página Home
 
    	@home
    	Cenario: Validando minimamente a pagina Home

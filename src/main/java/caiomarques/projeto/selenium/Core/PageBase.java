@@ -1,5 +1,7 @@
 package caiomarques.projeto.selenium.Core;
+import caiomarques.projeto.selenium.Utilidades.Constants;
 
+import java.time.Duration;
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
@@ -9,7 +11,7 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import Utilidades.Constants;
+
 
 import java.util.concurrent.TimeUnit;
 
@@ -22,7 +24,7 @@ public abstract class PageBase {
 		protected PageBase() {
 			WebDriver driver = getDriver();
 			PageFactory.initElements(driver, this);
-			wait = new WebDriverWait(driver, Constants.WEBDRIVER_TIMEOUT);
+			wait = new WebDriverWait(driver, Duration.ofSeconds(Constants.WEBDRIVER_TIMEOUT));
 			this.driver = driver;
 		}
 		
@@ -57,7 +59,6 @@ public abstract class PageBase {
 		protected void click(WebElement element) {
 			waitForClickable(element);
 			element.click();
-			
 		}
 		
 		protected void selectBox(WebElement element) {

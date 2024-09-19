@@ -2,8 +2,8 @@ package caiomarques.projeto.selenium.Utilidades;
 
 public class Constants {
 
-	public static final long WEBDRIVER_TIMEOUT = 20;
-    
+	public static final int WEBDRIVER_TIMEOUT = 20;
+
     public static final String DATE_FORMAT = "MM/DD/YYYY";
 
     public static final String TIME_FORMAT = "hh:mm:ss";

@@ -1,32 +1,44 @@
 package caiomarques.projeto.selenium.PageObjects;
 
+import caiomarques.projeto.selenium.Core.PageBase;
+import caiomarques.projeto.selenium.Utilidades.Constants;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-import caiomarques.projeto.selenium.Core.PageBase;
-import caiomarques.projeto.selenium.Utilidades.Constants;
-
-public class ExemploPage extends PageBase{
+public class HomePage2 extends PageBase{
 
 	// Mapeamento
-		@FindBy(id = "user-name")
-	    private WebElement usernameField;
-	
-	    @FindBy(id = "password")
-	    private WebElement passwordField;
-	
-	    @FindBy(className=  "login-button")
-	    private WebElement loginButton;
-	
-	    @FindBy(xpath = "//*[@id=\"login_button_container\"]/div/form/h3/text()[1]")
-	    private WebElement errorText;
-	    
+	@FindBy(css = "[class='logo']")
+	private WebElement linkLogo;
+
+	@FindBy(css = "#menuSearch")
+	private WebElement iconSearch;
+
+	@FindBy(css = "#menuUser")
+	private WebElement iconLogin;
+
+	@FindBy(css = "#menuCart")
+	private WebElement iconCart;
+
+	@FindBy(css = "#menuHelp")
+	private WebElement iconHelp;
+
+	@FindBy(css = "#autoComplete")
+	private WebElement inptSearch;
+
+	@FindBy(css = "h3.categoryTitle")
+	private WebElement lblCategoryTitle;
     
     //Metodos
 	    public void visitPage() {
 	        getDriver().get(Constants.HOME_PAGE_URL);
 	    }
-	    
+
+		public void clickIconLogin(){
+			click(iconLogin);
+		}
+
 	    public void setUsername(String theUsername) {
 	        usernameField.clear();
 	        usernameField.sendKeys(theUsername);
