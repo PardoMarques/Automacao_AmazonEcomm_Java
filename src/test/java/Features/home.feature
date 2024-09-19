@@ -11,7 +11,12 @@ Funcionalidade: Página Inicial (Home)
 		Então deve aparecer no titulo a mensagem "Amazon.com.br | Tudo pra você, de A a Z."
 		E deve constar na atual url o valor "https://www.amazon.com.br/"
 
-	Cenário: Exibir sugestões de pesquisa ao digitar na barra de pesquisa
+	Esquema do Cenário: Exibir sugestões de pesquisa ao digitar na barra de pesquisa
 		Dado que acesso a página inicial da Amazon
-		Quando escrevo no campo de pesquisa o trecho "controle"
-		Então deve aparecer dez sugestões sobre o trecho "controle"
+		Quando escrevo no campo de pesquisa o trecho <produtoPesquisado>
+		Então deve aparecer dez sugestões sobre o trecho <produtoPesquisado>
+		Exemplos:
+			|	produtoPesquisado	|
+			|	"controle"			|
+			|	"sabonete"			|
+			|	"máquina"			|
