@@ -10,10 +10,10 @@ import org.junit.runner.RunWith;
 		glue = {"StepDefinitions"},
 		tags = "@all_home",
 		monochrome = true,
-		plugin = {"pretty",
-				"junit:target/junitreport.xml",
-				"json:target/jsonreport.json",
-				"html:target/cucumber-reports",
+		plugin = {
+				"pretty",
+				"html:target/cucumber-reports.html",
+				"json:target/cucumber-reports/cucumber.json"
 		}
 )
 
