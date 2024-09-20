@@ -9,6 +9,14 @@ Projeto de automação de testes web na linguagem <b>Java</b> com <b>Maven</b> u
 
 ###### ChromeDriver Download: http://chromedriver.chromium.org/downloads
 
+## Arquitetura
+Projeto estruturado a partir do design patterns <b>Page Objects</b>:
+
+- Classe BasePage: Classe mãe das classes Page.
+- <b>Métodos tratados</b> e renomeados e facilitados
+- Locators e Métodos aplicados por classe Page
+- Classe Hooks: Orquestração dos testes
+  
 ### Executando os testes
 Para baixar as dependências e rodar os testes pela primeira vez, executar o comando <b>maven clean install</b>
 
