@@ -11,9 +11,9 @@ import org.junit.runner.RunWith;
 		tags = "@all_home",
 		monochrome = true,
 		plugin = {
-				"pretty",
-				"html:target/cucumber-reports.html",
-				"json:target/cucumber-reports/cucumber.json"
+				"pretty",                               	// Formato de saída legível
+				"json:target/cucumber-reports/report.json", // Geração de relatório em JSON
+				"html:target/cucumber-reports/report.html"  // Geração de relatório em HTML
 		}
 )
 
