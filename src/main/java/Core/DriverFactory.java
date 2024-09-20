@@ -11,7 +11,11 @@ public class DriverFactory {
 		if (driver == null) {
 			System.setProperty("webdriver.chrome.driver", "drivers/chromedriver.exe");
 			ChromeOptions chromeOptions = new ChromeOptions(); 
-			//chromeOptions.addArguments("--headless"); 
+			//chromeOptions.addArguments("--headless");
+			chromeOptions.addArguments("--incognito");
+			chromeOptions.addArguments("--disable-extensions");
+			chromeOptions.addArguments("--disable-application-cache");
+			chromeOptions.addArguments("--ignore-certificate-errors");
 			driver = new ChromeDriver(chromeOptions); 
 		}
 		// driver.manage().window().setSize(new Dimension (1200, 765));

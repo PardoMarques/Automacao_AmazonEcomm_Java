@@ -26,6 +26,7 @@ public class HomePage extends BasePage {
 	//Metodos
 	    public void visitarPagina() {
 	        getDriver().get(Constants.HOME_PAGE_URL);
+			getDriver().navigate().refresh();
 	    }
 
 		public void validarVisitaComTempoDeCarregamento(){
@@ -40,12 +41,12 @@ public class HomePage extends BasePage {
 		}
 
 		public void clicarNoIconeDePesquisa(){
-			click(inputSearch);
+			clicarNoElemento(iconSearch);
 		}
 
 	    public void preencherCampoDePesquisa(String textoProduto) {
-			iconSearch.click();
-			iconSearch.sendKeys(textoProduto);
+			clicarNoElemento(inputSearch);
+			preencherCampo(inputSearch, textoProduto);
 	    }
 
 	    public void realizarPesquisa(String textoProduto) {
@@ -58,7 +59,7 @@ public class HomePage extends BasePage {
 			List<WebElement> suggestions = boxSugestions.findElements(By.cssSelector("[class='s-suggestion s-suggestion-ellipsis-direction']"));
 
 			for (WebElement suggestion : suggestions) {
-				String suggestionText = getText(suggestion);
+				String suggestionText = retornarTexto(suggestion);
 				assertEquals(suggestionText, textoProduto);
 			}
 		}
