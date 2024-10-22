@@ -44,10 +44,10 @@ public class HomePage extends BasePage {
 			clicarNoElemento(iconSearch);
 		}
 
-	    public void preencherCampoDePesquisa(String textoProduto) {
+		public void preencherCampoDePesquisa(String textoProduto) {
 			clicarNoElemento(inputSearch);
 			preencherCampo(inputSearch, textoProduto);
-	    }
+		}
 
 	    public void realizarPesquisa(String textoProduto) {
 			preencherCampoDePesquisa(textoProduto);

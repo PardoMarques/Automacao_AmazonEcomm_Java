@@ -23,6 +23,11 @@ public class HomeSteps {
 		homePage.validarVisitaComTempoDeCarregamento();
 	}
 
+	@Quando("ajustar as dimensões do meu browser para simular um {string}")
+	public void ajustar_as_dimensões_do_meu_browser_para_simular_um(String textoDimensao) {
+		homePage.modificarDimensoesBrowser(textoDimensao);
+	}
+
 	@Quando("escrevo no campo de pesquisa o trecho {string}")
 	public void escrevo_no_campo_de_pesquisa_o_trecho(String textoProduto) {
 		homePage.preencherCampoDePesquisa(textoProduto);

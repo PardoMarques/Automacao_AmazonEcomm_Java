@@ -27,6 +27,10 @@ public class BasePage {
 		return DriverFactory.getDriver();
 	}
 
+	// ======================
+	// MÉTODOS PRINCIPAIS COM TRATATIVA
+	// ======================
+
 	protected void clicarNoElemento(WebElement element) {
 		esperarElementoSerClicavel(element);
 		element.click();
@@ -73,6 +77,29 @@ public class BasePage {
 	protected void limparCampo(WebElement element ) {
 		esperarElementoSerClicavel(element);
 		element.clear();
+	}
+
+	public void modificarDimensoesBrowser(String textoDimensao) {
+		switch (textoDimensao) {
+			case "Desktop":
+				driver.manage().window().setSize(new Dimension(1920, 1080));
+				System.out.println("Modo Desktop selecionado: 1920x1080");
+				break;
+
+			case "Tablet":
+				driver.manage().window().setSize(new Dimension(720, 1080));
+				System.out.println("Modo Tablet selecionado: 768x1024");
+				break;
+
+			case "Mobile":
+				driver.manage().window().setSize(new Dimension(400, 800));
+				System.out.println("Modo Mobile selecionado: 375x667");
+				break;
+
+			default:
+				System.out.println("Dimensão desconhecida. Manter modo padrão.");
+				break;
+		}
 	}
 
 	// ======================
